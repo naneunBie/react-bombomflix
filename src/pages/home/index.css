@@ -1,0 +1,15 @@
+.page-body {
+    padding: 2rem;
+    padding-left: 3.5rem;
+}
+
+.card-body {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.page-header {
+    padding-top: 5rem;
+}
