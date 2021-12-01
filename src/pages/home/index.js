@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Image, Row } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import MyCard from '../../components/card';
-import MyNavbar from '../../components/navbar';
-import DetailMovie from '../detail-movie';
+import { NO_RESULT } from '../../configs';
 import { getListMovie } from '../../store/actions/movies';
 import './index.css';
 
 
 function Home() {
     const [whoAmI, setWhoAmI] = useState("Noobie");
-    const [movie, setMovie] = useState([]);
     const data = useSelector((state) => state?.movies?.result?.Search);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(getListMovie("Batman"));
-
-    }, [])
+    // useEffect(() => {
+    //     dispatch(getListMovie("Batman"));
+    // }, [])
 
     const sayHello = () => {
         return (
@@ -28,16 +25,22 @@ function Home() {
     const setMovieList = () => {
         return (
             <>
-                {
-                    data?.map((item, key) =>
-                        <div className="col-md-3 card-body" key={key}>
-                            <Col>
-                                <MyCard data={{ ...item }} />
-                            </Col>
-                        </div>
-                    )
+                <Row>
+                    {
 
-                }
+                        data?.length > 0 && data?.map((item, key) =>
+                            <div className="col-md-3 card-body" key={key}>
+                                <Col>
+                                    <MyCard data={{ ...item }} />
+                                </Col>
+                            </div>
+                        )
+
+                    }
+                </Row>
+                <div className="d-flex justify-content-center mt-5 images-home">
+                    <Image src={NO_RESULT} />
+                </div>
             </>
         )
     }
@@ -49,9 +52,7 @@ function Home() {
             </div>
 
             <div className="col-md-12 page-body">
-                <Row>
-                    {setMovieList()}
-                </Row>
+                {setMovieList()}
             </div>
         </div>
     )

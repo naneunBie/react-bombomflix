@@ -7,12 +7,12 @@ import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
   return (
-    <div className="App">
-      <div>
-        <MyNavbar />
-      </div>
 
-      <Router>
+    <Router>
+      <div className="App">
+        <div>
+          <MyNavbar />
+        </div>
         <Switch>
           {routerApp.map((item, index) => {
             const { path, compt, exact } = item;
@@ -21,8 +21,8 @@ function App() {
             );
           })}
         </Switch>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 

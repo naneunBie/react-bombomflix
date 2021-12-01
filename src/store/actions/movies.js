@@ -2,8 +2,8 @@ import axios from "axios";
 import {
     GET_LIST_MOVIE,
     GET_LIST_MOVIE_ERROR,
-    GET_MOVIE_DETAIL,
-    GET_MOVIE_DETAIL_ERROR
+    GET_MOVIE_SEARCH,
+    GET_MOVIE_SEARCH_ERROR
 } from '../types';
 
 

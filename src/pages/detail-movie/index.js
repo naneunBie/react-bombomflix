@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button, Col, Row, Image, Card } from 'react-bootstrap';
+import { Col, Row, Image, Card } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
+import { NO_RESULT } from '../../configs';
 import './index.css';
 
 
 function DetailMovie(props) {
     const { detail } = props?.location?.state;
-    console.log(detail);
     return (
         <Row className="content-padding">
             <Col md={3} >
